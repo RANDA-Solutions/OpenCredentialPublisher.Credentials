@@ -18,8 +18,14 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         [JsonProperty("verificationMethod", Order = 4)]
         public string VerificationMethod { get; set; }
 
-        [JsonProperty("signature", Order = 7)]
+        [JsonProperty("signature", Order = 7, NullValueHandling = NullValueHandling.Ignore)]
         public string Signature { get; set; }
+
+        [JsonProperty("nonce", Order = 9, NullValueHandling = NullValueHandling.Ignore)]
+        public string Nonce { get; set; }
+
+        [JsonProperty("proofValue", Order = 8, NullValueHandling = NullValueHandling.Ignore)]
+        public string ProofValue { get; set; }
 
         [JsonProperty("challenge", Order = 6, NullValueHandling = NullValueHandling.Ignore)]
         public string Challenge { get; set; }
