@@ -54,7 +54,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v1_0.Clr
 
         [JsonPropertyName("birthDate"), Newtonsoft.Json.JsonProperty("birthDate")]
         [Description("Birthdate of the person. Model Primitive Datatype = Date.")]
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
 
         /// <summary>
         /// A short description of the individual or organization. Model Primitive Datatype = String.
