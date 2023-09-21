@@ -21,6 +21,9 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         [JsonProperty("type", Order = 3)]
         public List<String> Types { get; set; }
 
+        [JsonProperty("name", Order = 10)]
+        public string Name { get; set; }
+
         [JsonProperty("issuer", Order = 4)]
         public String Issuer { get; set; }
 
