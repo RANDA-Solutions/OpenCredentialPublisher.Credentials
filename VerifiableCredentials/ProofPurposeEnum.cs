@@ -2,6 +2,7 @@
 {
     public enum ProofPurposeEnum
     {
-        assertionMethod
+        assertionMethod,
+        authentication
     }
 }
