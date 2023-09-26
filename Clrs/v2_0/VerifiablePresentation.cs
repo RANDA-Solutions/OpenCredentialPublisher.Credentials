@@ -11,12 +11,16 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public List<String> Contexts { get; set; }
 
         [JsonProperty("type", Order = 2), JsonPropertyName("type")]
-        public String Type { get; set; } = "VerifiablePresentation";
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.Json.SingleOrArrayConverter<string>))]
+        public List<String> Types { get; set; } = new List<string> { "VerifiablePresentation" };
 
-        [JsonProperty("verifiableCredential", Order = 3), JsonPropertyName("verifiableCredential")]
+        [JsonProperty("holder", NullValueHandling = NullValueHandling.Ignore, Order = 3), JsonPropertyName("holder")]
+        public String Holder { get; set; } 
+
+        [JsonProperty("verifiableCredential", Order = 4), JsonPropertyName("verifiableCredential")]
         public List<object> VerifiableCredential { get; set; }
 
-        [JsonProperty("proof", Order = 4, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
+        [JsonProperty("proof", Order = 5, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<Proof>))]
         public List<Proof> Proofs { get; set; }
     }
