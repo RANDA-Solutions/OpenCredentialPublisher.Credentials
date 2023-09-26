@@ -16,7 +16,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         public string ProofPurpose { get; set; }
 
         [JsonProperty("verificationMethod", Order = 4)]
-        public string VerificationMethod { get; set; }
+        public object VerificationMethod { get; set; }
 
         [JsonProperty("signature", Order = 7, NullValueHandling = NullValueHandling.Ignore)]
         public string Signature { get; set; }
@@ -32,5 +32,9 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 
         [JsonProperty("domain", Order = 5, NullValueHandling = NullValueHandling.Ignore)]
         public string Domain { get; set; }
+
+        [JsonProperty("jws", Order = 10, NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("jws")]
+        public string JWS { get; set; }
+
     }
 }

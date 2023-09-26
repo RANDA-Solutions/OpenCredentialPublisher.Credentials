@@ -5,6 +5,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 {
     public class AchievementCredential : EndorsedCredential
     {
+        public static string[] PrimaryTypes = new string[]{ "AchievementCredential", "OpenBadgeCredential" };
+
         public AchievementCredential()
         {
             Context = new[] {
