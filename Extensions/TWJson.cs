@@ -12,14 +12,14 @@ namespace OpenCredentialPublisher.Credentials.Extensions
             }
             else
             {
-                return JsonSerializer.Deserialize<T>(value, new JsonSerializerOptions { IgnoreNullValues = true });
+                return JsonSerializer.Deserialize<T>(value, new JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull });
             }
         }
         public static JsonSerializerOptions IgnoreNulls
         {
             get
             {
-                return new JsonSerializerOptions { IgnoreNullValues = true };
+                return new JsonSerializerOptions { DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull };
             }
         }
     }

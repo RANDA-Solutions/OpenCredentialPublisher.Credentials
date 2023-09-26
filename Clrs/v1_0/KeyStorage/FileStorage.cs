@@ -49,6 +49,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v1_0.KeyStorage
 
         public async Task<string> GetPublicKeyAsync(string keyId = null, string issuerId = null)
         {
+            await Task.Delay(0);
             throw new NotImplementedException();
         }
 
@@ -142,7 +143,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v1_0.KeyStorage
 
             var payload = JwtPayload.Deserialize(contents);
 
-            var token = new JwtSecurityToken(new JwtHeader(signingCredentials), payload);
+            var token = new JwtSecurityToken(new System.IdentityModel.Tokens.Jwt.JwtHeader(signingCredentials), payload);
 
             var handler = new JwtSecurityTokenHandler();
 
