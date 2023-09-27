@@ -9,7 +9,7 @@ namespace OpenCredentialPublisher.Credentials.Converters.Json
 
         public override bool CanConvert(Type objectType)
         {
-            return (objectType == typeof(T) || objectType == typeof(String));
+            return (objectType == typeof(object) || objectType == typeof(T) || objectType == typeof(String));
         }
 
         public override object Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

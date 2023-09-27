@@ -1,4 +1,6 @@
-﻿namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
+﻿using System.Collections.Generic;
+
+namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 {
     public interface IVerifiableCredential
     {
@@ -13,7 +15,7 @@
         string IssuanceDate { get; set; }
         Profile Issuer { get; set; }
         string Name { get; set; }
-        Proof[] Proof { get; set; }
+        List<Proof> Proof { get; set; }
         BasicProperties RefreshService { get; set; }
         BasicProperties[] TermsOfUse { get; set; }
         string[] Type { get; set; }

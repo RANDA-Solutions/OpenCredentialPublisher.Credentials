@@ -22,7 +22,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
             };
         }
 
-        
+        [JsonProperty("credentialSubject", Order = 7, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
+        public new AchievementSubject CredentialSubject { get; set; }
 
         [JsonProperty("evidence", NullValueHandling = NullValueHandling.Ignore, Order = 99), JsonPropertyName("evidence")]
         public Evidence[] Evidence { get; set; }

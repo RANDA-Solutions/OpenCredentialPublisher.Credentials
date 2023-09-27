@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using OpenCredentialPublisher.Credentials.VerifiableCredentials;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
@@ -27,7 +29,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public Image Image { get; set; }
 
         [JsonProperty("credentialSubject", Order =7,  NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
-        public CredentialSubject CredentialSubject { get; set; }
+        public virtual CredentialSubject CredentialSubject { get; set; }
 
         [JsonProperty("issuer", Order = 8, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("issuer")]
         public Profile Issuer { get; set; }
@@ -39,7 +41,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string ExpirationDate { get; set; }
 
         [JsonProperty("proof", Order = 11, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
-        public Proof[] Proof { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(SingleOrArrayConverter<Proof>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<Proof>))]
+        public List<Proof> Proof { get; set; }
 
         [JsonProperty("credentialSchema", Order = 12,  NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSchema")]
         public BasicProperties[] CredentialSchema { get; set; }
