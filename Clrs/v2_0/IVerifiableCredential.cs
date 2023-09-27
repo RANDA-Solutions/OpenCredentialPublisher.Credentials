@@ -11,7 +11,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         string Description { get; set; }
         string ExpirationDate { get; set; }
         string Id { get; set; }
-        Image Image { get; set; }
+        object Image { get; set; }
         string IssuanceDate { get; set; }
         Profile Issuer { get; set; }
         string Name { get; set; }

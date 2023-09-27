@@ -8,7 +8,7 @@ namespace OpenCredentialPublisher.Credentials.Converters.Newtonsoft
     {
         public override bool CanConvert(Type objectType)
         {
-            return (objectType == typeof(T) || objectType == typeof(String));
+            return (objectType == typeof(object) || objectType == typeof(T) || objectType == typeof(String));
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

@@ -46,7 +46,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string HumanCode { get; set; }
 
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("image")]
-        public Image Image { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.StringOrObjectConverter<Image>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Image>))]
+        public object Image { get; set; }
 
         [JsonProperty("@language", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("@language")]
         public string Language { get; set; }

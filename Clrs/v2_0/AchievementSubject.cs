@@ -32,7 +32,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public IdentityObject[] Identifier { get; set; }
 
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("image")]
-        public Image Image { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.StringOrObjectConverter<Image>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Image>))]
+        public object Image { get; set; }
 
         [JsonProperty("licenseNumber", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("licenseNumber")]
         public string LicenseNumber { get; set; }

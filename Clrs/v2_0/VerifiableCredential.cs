@@ -23,10 +23,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         [JsonProperty("description", Order = 5, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("description")]
         public string Description { get; set; }
 
-
-
         [JsonProperty("image", Order = 6, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("image")]
-        public Image Image { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.StringOrObjectConverter<Image>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Image>))]
+        public object Image { get; set; }
 
         [JsonProperty("credentialSubject", Order =7,  NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
         public virtual CredentialSubject CredentialSubject { get; set; }
