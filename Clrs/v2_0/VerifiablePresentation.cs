@@ -11,7 +11,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public List<String> Contexts { get; set; }
 
         [JsonProperty("type", Order = 2), JsonPropertyName("type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.Json.SingleOrArrayConverter<string>))]
+        [Newtonsoft.Json.JsonConverter(typeof(Credentials.Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
         public List<String> Types { get; set; } = new List<string> { "VerifiablePresentation" };
 
         [JsonProperty("holder", NullValueHandling = NullValueHandling.Ignore, Order = 3), JsonPropertyName("holder")]

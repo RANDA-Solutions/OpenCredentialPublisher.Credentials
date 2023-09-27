@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
@@ -7,7 +8,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     {
 
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        public string[] Type { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Credentials.Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
+        public List<string> Type { get; set; }
 
         [JsonProperty("endorsementComment", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("endorsementComment")]
         public string EndorsementComment { get; set; }

@@ -7,7 +7,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
     public class ClrSetSubject: ClrSetDType, ICredentialSubject
     {
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
-        [Newtonsoft.Json.JsonConverter(typeof(SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
         public new List<string> Type { get; set; }
     }
 }

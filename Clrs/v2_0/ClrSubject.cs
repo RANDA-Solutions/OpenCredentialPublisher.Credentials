@@ -8,7 +8,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     public class ClrSubject: CredentialSubject, ICredentialSubject 
     {
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        public string[] Type { get; set; } = new string[] { "ClrSubject" };
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
+        public List<string> Type { get; set; } = new List<string> { "ClrSubject" };
 
         [JsonProperty("identifier", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("identifier")]
         public IdentityObject Identifier { get; set; }

@@ -11,7 +11,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string Id { get; set; }
 
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        [Newtonsoft.Json.JsonConverter(typeof(SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
         public List<string> Type { get; set; }
 
         [JsonProperty("name", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("name")]
@@ -33,7 +33,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string[] EndorsementJwt { get; set; }
 
         [JsonProperty("image", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("image")]
-        [Newtonsoft.Json.JsonConverter(typeof(StringOrObjectConverter<Image>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Image>))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.StringOrObjectConverter<Image>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Image>))]
         public object Image { get; set; }
 
         [JsonProperty("email", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("email")]

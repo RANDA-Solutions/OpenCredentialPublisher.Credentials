@@ -5,6 +5,7 @@
 //    var class1 = Class1.FromJson(jsonString);
 
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
@@ -15,7 +16,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string Id { get; set; }
 
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        public string[] Type { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
+        public List<string> Type { get; set; }
 
         [JsonProperty("alignment", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("alignment")]
         public Alignment[] Alignment { get; set; }
