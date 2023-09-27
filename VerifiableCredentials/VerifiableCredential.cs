@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using OpenCredentialPublisher.Credentials.Clrs.v1_0.Interfaces;
 using OpenCredentialPublisher.Credentials.Clrs.v1_0.Utilities;
+using OpenCredentialPublisher.Credentials.Converters.Newtonsoft;
 using OpenCredentialPublisher.Credentials.Cryptography;
 using System;
 using System.Collections.Generic;

@@ -40,8 +40,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string ExpirationDate { get; set; }
 
         [JsonProperty("proof", Order = 11, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
-        [Newtonsoft.Json.JsonConverter(typeof(SingleOrArrayConverter<Proof>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<Proof>))]
-        public List<Proof> Proof { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Newtonsoft.SingleOrArrayConverter<Proof>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<Proof>))]
+        public Proof[] Proof { get; set; }
 
         [JsonProperty("credentialSchema", Order = 12,  NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSchema")]
         public BasicProperties[] CredentialSchema { get; set; }

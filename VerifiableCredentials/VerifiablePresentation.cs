@@ -22,6 +22,6 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 
         [JsonProperty("proof", Order = 5, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<Proof>)), System.Text.Json.Serialization.JsonConverter(typeof(Converters.Json.SingleOrArrayConverter<Proof>))]
-        public List<Proof> Proofs { get; set; }
+        public Proof[] Proofs { get; set; }
     }
 }

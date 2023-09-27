@@ -12,7 +12,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("type", Order = 2), JsonPropertyName("type")]
         [Newtonsoft.Json.JsonConverter(typeof(Credentials.Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
-        public List<String> Types { get; set; } = new List<string> { "VerifiablePresentation" };
+        public string[] Types { get; set; } = new string[] { "VerifiablePresentation" };
 
         [JsonProperty("holder", NullValueHandling = NullValueHandling.Ignore, Order = 3), JsonPropertyName("holder")]
         public String Holder { get; set; } 
@@ -22,6 +22,6 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("proof", Order = 5, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<Proof>))]
-        public List<Proof> Proofs { get; set; }
+        public Proof[] Proofs { get; set; }
     }
 }

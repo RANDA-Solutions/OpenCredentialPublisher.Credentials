@@ -15,7 +15,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         string IssuanceDate { get; set; }
         Profile Issuer { get; set; }
         string Name { get; set; }
-        List<Proof> Proof { get; set; }
+        Proof[] Proof { get; set; }
         BasicProperties RefreshService { get; set; }
         BasicProperties[] TermsOfUse { get; set; }
         string[] Type { get; set; }

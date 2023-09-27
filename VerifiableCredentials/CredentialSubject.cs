@@ -16,14 +16,14 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("id")]
         String Id { get; set; }
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
-        public List<string> Type { get; set; }
+        public string[] Type { get; set; }
     }
     public abstract class CredentialSubject : ICredentialSubject
     {
         public String Id { get; set; }
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
-        public List<string> Type { get; set; }
+        public string[] Type { get; set; }
     }
 
     [JsonType("*")]
