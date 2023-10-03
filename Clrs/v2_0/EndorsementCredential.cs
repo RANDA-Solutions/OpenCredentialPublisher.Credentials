@@ -21,6 +21,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
             };
         }
 
+        [JsonProperty("issuer", Order = 8, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("issuer")]
+        public new Profile Issuer { get; set; }
+
         public new EndorsementSubject CredentialSubject { get; set; }
 
         [JsonProperty("awardedDate", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("awardedDate")]

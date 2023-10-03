@@ -72,7 +72,8 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         public virtual object CredentialSubject { get; set; }
 
         [JsonProperty("issuer", Order = 8, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("issuer")]
-        public Profile Issuer { get; set; }
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.StringOrObjectConverter<Profile>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.StringOrObjectConverter<Profile>))]
+        public virtual object Issuer { get; set; }
 
         [JsonProperty("issuanceDate", Order = 9, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("issuanceDate")]
         public string IssuanceDate { get; set; }

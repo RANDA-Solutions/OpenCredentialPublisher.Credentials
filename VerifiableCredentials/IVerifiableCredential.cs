@@ -19,7 +19,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
         string Id { get; set; }
         object Image { get; set; }
         string IssuanceDate { get; set; }
-        Profile Issuer { get; set; }
+        object Issuer { get; set; }
         string Name { get; set; }
         Proof[] Proof { get; set; }
         BasicProperties RefreshService { get; set; }
