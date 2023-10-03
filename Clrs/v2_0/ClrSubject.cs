@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System;
 using System.Text.Json.Serialization;
+using OpenCredentialPublisher.Credentials.VerifiableCredentials;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 {
     public class ClrSubject: CredentialSubject, ICredentialSubject 
     {
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
-        public string[] Type { get; set; } = new string[] { "ClrSubject" };
+        public ClrSubject()
+        {
+            Type = new string[] { "ClrSubject" };
+        }
 
         [JsonProperty("identifier", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("identifier")]
         public IdentityObject Identifier { get; set; }

@@ -1,13 +1,19 @@
 ﻿using System.Collections.Generic;
+using OpenCredentialPublisher.Credentials.Clrs.v2_0;
 
-namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
+namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 {
-    public interface IVerifiableCredential
+    public interface IVerifiableCredential: IVerifiableCredential<object>
+    {
+        
+    }
+
+    public interface IVerifiableCredential<T>
     {
         string[] Context { get; set; }
         BasicProperties[] CredentialSchema { get; set; }
         BasicProperties CredentialStatus { get; set; }
-        CredentialSubject CredentialSubject { get; set; }
+        T CredentialSubject { get; set; }
         string Description { get; set; }
         string ExpirationDate { get; set; }
         string Id { get; set; }
