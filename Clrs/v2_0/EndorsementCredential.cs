@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using OpenCredentialPublisher.Credentials.VerifiableCredentials;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
@@ -19,6 +20,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
                 "EndorsementCredential"
             };
         }
+
+        [JsonProperty("issuer", Order = 8, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("issuer")]
+        public new Profile Issuer { get; set; }
 
         public new EndorsementSubject CredentialSubject { get; set; }
 

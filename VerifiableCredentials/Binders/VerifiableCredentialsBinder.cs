@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenCredentialPublisher.Credentials.VerifiableCredentials;
+using OpenCredentialPublisher.Credentials.Clrs.v1_0.Clr;
 
 namespace OpenCredentialPublisher.Credentials.Binders
 {
