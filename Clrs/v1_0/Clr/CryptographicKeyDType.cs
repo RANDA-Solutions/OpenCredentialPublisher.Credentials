@@ -9,6 +9,7 @@
  */
 
 using OpenCredentialPublisher.Credentials.Extensions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -71,13 +72,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v1_0.Clr
         /// </summary>
         [JsonExtensionData]
         [JsonPropertyName("additionalProperties"), Newtonsoft.Json.JsonProperty("additionalProperties")]
-        private string _AdditionalProperties { get; set; }
-        [NotMapped]
-        public Dictionary<string, object> AdditionalProperties
-        {
-            get { return TWJson.Deserialize<Dictionary<string, object>>(_AdditionalProperties); }
-            set { _AdditionalProperties = JsonSerializer.Serialize(value); }
-        }
+        public Dictionary<String, Object> AdditionalProperties { get; set; }
 
 
         /// <summary>
