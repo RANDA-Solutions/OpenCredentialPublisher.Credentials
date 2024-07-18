@@ -1,8 +1,15 @@
 ﻿using System.Collections.Generic;
+using JsonSubTypes;
+using OpenCredentialPublisher.Credentials.Clrs.v1_0.Clr;
 using OpenCredentialPublisher.Credentials.Clrs.v2_0;
 
 namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 {
+    [Newtonsoft.Json.JsonConverter(typeof(JsonSubtypes), "type")]
+    [JsonSubtypes.KnownSubType(typeof(ClrCredential), "ClrCredential")]
+    [JsonSubtypes.KnownSubType(typeof(AchievementCredential), "AchievementCredential")]
+    [JsonSubtypes.KnownSubType(typeof(EndorsementCredential), "EndorsementCredential")]
+    [JsonSubtypes.KnownSubType(typeof(VerifiableCredential), "VerifiableCredential")]
     public interface IVerifiableCredential: IVerifiableCredential<object>
     {
         

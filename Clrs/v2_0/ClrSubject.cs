@@ -20,7 +20,8 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public Achievement[] Achievement { get; set; }
 
         [JsonProperty("verifiableCredential", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("verifiableCredential")]
-        public VerifiableCredential[] VerifiableCredential { get; set; }
+        //[Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<object>))]
+        public object[] VerifiableCredential { get; set; }
 
         [JsonProperty("association", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("association")]
         public Association[] Association { get; set; }

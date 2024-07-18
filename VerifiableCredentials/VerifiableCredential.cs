@@ -1,10 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using JsonSubTypes;
 using Newtonsoft.Json;
-using OpenCredentialPublisher.Credentials.Clrs.v1_0.Interfaces;
-using OpenCredentialPublisher.Credentials.Clrs.v1_0.Utilities;
 using OpenCredentialPublisher.Credentials.Clrs.v2_0;
-using OpenCredentialPublisher.Credentials.Converters.Newtonsoft;
-using OpenCredentialPublisher.Credentials.Cryptography;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;

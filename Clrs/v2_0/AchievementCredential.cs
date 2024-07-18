@@ -11,7 +11,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         {
             Context = new[] {
                 "https://www.w3.org/2018/credentials/v1",
-                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.2.json",
+                "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json",
                 "https://w3id.org/security/suites/ed25519-2020/v1"
             };
 

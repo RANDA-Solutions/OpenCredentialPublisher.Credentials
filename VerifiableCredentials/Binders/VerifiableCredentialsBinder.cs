@@ -42,7 +42,11 @@ namespace OpenCredentialPublisher.Credentials.Binders
                 {
                     typeof(ICredentialSubject),
                     typeof(ClrSubject),
-                    typeof(ClrSetSubject)
+                    typeof(ClrSetSubject),
+                    typeof(Clrs.v2_0.ClrSubject),
+                    typeof(Clrs.v2_0.AchievementSubject),
+                    typeof(Clrs.v2_0.EndorsementSubject),
+                    typeof(CatchAllSubject)
                 }
             };
             return binder;
