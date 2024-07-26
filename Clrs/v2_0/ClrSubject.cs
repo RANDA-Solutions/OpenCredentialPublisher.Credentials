@@ -14,7 +14,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         }
 
         [JsonProperty("identifier", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("identifier")]
-        public IdentityObject Identifier { get; set; }
+        public IdentityObject[] Identifier { get; set; }
 
         [JsonProperty("achievement", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("achievement")]
         public Achievement[] Achievement { get; set; }
