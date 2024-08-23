@@ -10,8 +10,11 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     {
         public ClrSubject()
         {
-            Type = new string[] { "ClrSubject" };
+            
         }
+
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
+        public new String[] Type { get; set; } = new string[] { "ClrSubject" };
 
         [JsonProperty("identifier", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("identifier")]
         public IdentityObject[] Identifier { get; set; }

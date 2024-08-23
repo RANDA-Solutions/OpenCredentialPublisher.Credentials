@@ -10,8 +10,10 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     public class AchievementSubject : CredentialSubject, ICredentialSubject
     {
         public AchievementSubject() {
-            Type = new string[] { "AchievementSubject" };
         }
+
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
+        public new String[] Type { get; set; } = new[] { "AchievementSubject" };
 
         [JsonProperty("activityEndDate", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("activityEndDate")]
         [Newtonsoft.Json.JsonConverter(typeof(DateConverter<DateTime>), "o"), System.Text.Json.Serialization.JsonConverter(typeof(Converters.Json.DateConverter))]
