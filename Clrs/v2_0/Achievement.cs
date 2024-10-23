@@ -11,7 +11,6 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public string Id { get; set; }
 
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type"), System.Text.Json.Serialization.JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
         public string[] Type { get; set; }
 
         [JsonProperty("alignment", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("alignment")]
