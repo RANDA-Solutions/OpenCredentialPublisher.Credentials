@@ -11,5 +11,17 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("endorsementJwt", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("endorsementJwt")]
         public string[] EndorsementJwt { get; set; }
+
+        [JsonProperty("awardedDate", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("awardedDate")]
+        public string AwardedDate { get; set; }
+
+        [JsonProperty("validFrom", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("validFrom")]
+        public string ValidFrom { get; set; }
+
+        [JsonProperty("validUntil", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("validUntil")]
+        public string ValidUntil { get; set; }
+
+        [JsonProperty("proof", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
+        public new Proof[] Proof { get; set; }
     }
 }
