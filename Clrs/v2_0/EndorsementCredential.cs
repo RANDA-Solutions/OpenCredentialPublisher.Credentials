@@ -34,8 +34,5 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("validUntil", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("validUntil")]
         public string ValidUntil { get; set; }
-
-        [JsonProperty("proof", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("proof")]
-        public new Proof[] Proof { get; set; }
     }
 }
