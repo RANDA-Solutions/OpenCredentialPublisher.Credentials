@@ -21,8 +21,7 @@ namespace OpenCredentialPublisher.Credentials.Cryptography
         public static byte[] GenerateRandomSalt()
         {
             byte[] data = new byte[_saltLength];
-
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            using (var rng = RandomNumberGenerator.Create())
             {
                 for (int i = 0; i < 10; i++)
                 {
@@ -52,9 +51,9 @@ namespace OpenCredentialPublisher.Credentials.Cryptography
                 // convert password string to byte arrray
                 byte[] passwordBytes = System.Text.Encoding.UTF8.GetBytes(password);
 
-                var key = new Rfc2898DeriveBytes(passwordBytes, salt, _keyIterations);
+                var key = new Rfc2898DeriveBytes(passwordBytes, salt, _keyIterations, HashAlgorithmName.SHA256);
 
-                using (var aesCryptoServiceProvider = AesCryptoServiceProvider.Create())
+                using (var aesCryptoServiceProvider = Aes.Create())
                 {
                     aesCryptoServiceProvider.BlockSize = _blockSize;
                     aesCryptoServiceProvider.KeySize = _keySize;
@@ -106,9 +105,9 @@ namespace OpenCredentialPublisher.Credentials.Cryptography
             using (FileStream fsCrypt = new FileStream(inputFile, FileMode.Open))
             {
                 fsCrypt.Read(salt, 0, _saltLength);
-                var key = new Rfc2898DeriveBytes(passwordBytes, salt, _keyIterations);
+                var key = new Rfc2898DeriveBytes(passwordBytes, salt, _keyIterations, HashAlgorithmName.SHA256);
                 
-                using (var aesCryptoServiceProvider = AesCryptoServiceProvider.Create())
+                using (var aesCryptoServiceProvider = Aes.Create())
                 {
                     aesCryptoServiceProvider.BlockSize = _blockSize;
                     aesCryptoServiceProvider.KeySize = _keySize;

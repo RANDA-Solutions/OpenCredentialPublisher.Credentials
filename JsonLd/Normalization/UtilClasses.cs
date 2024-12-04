@@ -37,7 +37,7 @@ namespace OpenCredentialPublisher.Credentials.JsonLd.Normalization
 
         public string Digest()
         {
-            using var sha256Hash = HashAlgorithm.Create("SHA256");
+            using var sha256Hash = SHA256.Create();
             var bytes = Encoding.UTF8.GetBytes(sb.ToString());
             sb.Clear();
             var resultBytes = sha256Hash.ComputeHash(bytes);

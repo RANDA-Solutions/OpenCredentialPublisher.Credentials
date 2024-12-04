@@ -1,10 +1,7 @@
-﻿using JsonSubTypes;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using OpenCredentialPublisher.Credentials.Clrs.v2_0;
 using System;
-using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 {
