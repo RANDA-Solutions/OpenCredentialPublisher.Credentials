@@ -10,7 +10,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         public AchievementCredential()
         {
             Context = new[] {
-                "https://www.w3.org/2018/credentials/v1",
+                "https://www.w3.org/ns/credentials/v2",
                 "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json",
                 "https://w3id.org/security/suites/ed25519-2020/v1"
             };
@@ -27,9 +27,6 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("credentialSubject", Order = 7, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
         public new AchievementSubject CredentialSubject { get; set; }
-
-        [JsonProperty("awardedDate", Order = 98, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("awardedDate")]
-        public string AwardedDate { get; set; }
 
         [JsonProperty("evidence", NullValueHandling = NullValueHandling.Ignore, Order = 99), JsonPropertyName("evidence")]
         public Evidence[] Evidence { get; set; }

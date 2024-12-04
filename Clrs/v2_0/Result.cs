@@ -7,7 +7,6 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     public class Result
     {
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.Newtonsoft.SingleOrArrayConverter<string>)), System.Text.Json.Serialization.JsonConverter(typeof(OpenCredentialPublisher.Credentials.Converters.Json.SingleOrArrayConverter<string>))]
         public string[] Type { get; set; }
 
         [JsonProperty("achievedLevel", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("achievedLevel")]

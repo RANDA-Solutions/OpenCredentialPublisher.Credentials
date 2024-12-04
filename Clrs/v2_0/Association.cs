@@ -8,7 +8,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     public class Association
     {
         [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
-        public string Type { get; set; }
+        public string Type { get; set; } = "Association";
 
         [JsonProperty("associationType", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("associationType")]
         [Newtonsoft.Json.JsonConverter(typeof(EnumAsStringConverter<AssociationTypeEnum>))]

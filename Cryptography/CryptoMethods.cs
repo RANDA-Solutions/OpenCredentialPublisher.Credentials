@@ -127,7 +127,7 @@ namespace OpenCredentialPublisher.Credentials.Cryptography
 
         public static string GenerateSecretKey(int length, string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_")
         {
-            using (RNGCryptoServiceProvider crypto = new RNGCryptoServiceProvider())
+            using (var crypto = RandomNumberGenerator.Create())
             {
                 byte[] data = new byte[length];
 
