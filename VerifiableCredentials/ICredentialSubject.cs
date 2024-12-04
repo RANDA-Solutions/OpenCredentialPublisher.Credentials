@@ -1,18 +1,8 @@
-﻿using JsonSubTypes;
-using Newtonsoft.Json;
-using OpenCredentialPublisher.Credentials.Clrs.v1_0.Clr;
+﻿using Newtonsoft.Json;
 using System;
-using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 {
-    [Newtonsoft.Json.JsonConverter(typeof(JsonSubtypes), "type")]
-    [JsonSubtypes.KnownSubType(typeof(ClrSubject), "Clr")]
-    [JsonSubtypes.KnownSubType(typeof(ClrSetSubject), "ClrSet")]
-    [JsonSubtypes.KnownSubType(typeof(Clrs.v2_0.ClrSubject), "ClrSubject")]
-    [JsonSubtypes.KnownSubType(typeof(Clrs.v2_0.AchievementSubject), "AchievementSubject")]
-    [JsonSubtypes.KnownSubType(typeof(Clrs.v2_0.EndorsementSubject), "EndorsementSubject")]
-    [JsonSubtypes.KnownSubType(typeof(CatchAllSubject), "*")]
     public interface ICredentialSubject
     {
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("id")]
