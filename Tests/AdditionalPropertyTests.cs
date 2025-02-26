@@ -6,7 +6,7 @@ namespace Tests
     public class AdditionalPropertyTests
     {
         [Fact]
-        public void Test1()
+        public void TestClrCredential_ShouldSaveAdditionalProperties()
         {
             string clrCredentialJsonString = "{" +
                 "\"issuer\": {" +
