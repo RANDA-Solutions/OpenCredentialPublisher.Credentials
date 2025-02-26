@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using OpenCredentialPublisher.Credentials.Converters.Json;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -73,5 +72,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("dateOfBirth", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("dateOfBirth")]
         public string DateOfBirth { get; set; }
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        [JsonPropertyName("additionalProperties"), JsonProperty("additionalProperties", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, object> AdditionalProperties { get; set; }
     }
 }
