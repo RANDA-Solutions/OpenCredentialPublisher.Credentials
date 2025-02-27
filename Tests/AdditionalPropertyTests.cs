@@ -42,6 +42,11 @@ namespace Tests
             Assert.Single(credential.AdditionalProperties);
             Assert.True(Convert.ToBoolean(credential.AdditionalProperties!["booleanProperty"].ToString()));
 
+            string serializedCredential = JsonSerializer.Serialize(credential);
+            Assert.Contains("\"randomOtherProperty\":3", serializedCredential);
+            Assert.Contains("\"givenName\":\"Luke\"", serializedCredential);
+            Assert.Contains("\"familyName\":\"Skywalker\"", serializedCredential);
+            Assert.Contains("\"booleanProperty\":true", serializedCredential);
         }
     }
 }
