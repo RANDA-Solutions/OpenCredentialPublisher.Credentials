@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using OpenCredentialPublisher.Credentials.Converters.Newtonsoft;
-using System.ComponentModel;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0

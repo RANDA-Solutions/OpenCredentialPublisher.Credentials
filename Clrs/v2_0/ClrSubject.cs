@@ -13,7 +13,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
             
         }
 
-        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), System.Text.Json.Serialization.JsonPropertyName("type")]
+        [JsonProperty("type", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
         public new String[] Type { get; set; } = new string[] { "ClrSubject" };
 
         [JsonProperty("identifier", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("identifier")]
@@ -33,7 +33,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         /// Additional properties of the object
         /// </summary>
         [System.Text.Json.Serialization.JsonExtensionData]
-        [JsonPropertyName("additionalProperties"), Newtonsoft.Json.JsonProperty("additionalProperties", NullValueHandling = NullValueHandling.Ignore)]
-        public Dictionary<String, Object> AdditionalProperties { get; set; }
+        [JsonPropertyName("additionalProperties"), JsonProperty("additionalProperties", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, object> AdditionalProperties { get; set; }
     }
 }
