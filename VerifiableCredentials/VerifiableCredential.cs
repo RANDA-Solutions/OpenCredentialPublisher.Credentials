@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using OpenCredentialPublisher.Credentials.Clrs.v2_0;
 using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
@@ -63,7 +64,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 
     {
         [JsonProperty("@context", Order = 1, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("@context")]
-        public string[] Context { get; set; }
+        public List<string> Context { get; set; }
 
         [JsonProperty("type", Order = 2, NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("type")]
         public string[] Type { get; set; }

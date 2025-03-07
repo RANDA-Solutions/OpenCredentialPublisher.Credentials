@@ -1,4 +1,5 @@
 ﻿using OpenCredentialPublisher.Credentials.Clrs.v2_0;
+using System.Collections.Generic;
 
 namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 {
@@ -33,7 +34,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 
     public interface IVerifiableCredential2_0<T>
     {
-        string[] Context { get; set; }
+        List<string> Context { get; set; }
         BasicProperties[] CredentialSchema { get; set; }
         BasicProperties CredentialStatus { get; set; }
         T CredentialSubject { get; set; }
