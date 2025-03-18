@@ -29,7 +29,10 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         [JsonProperty("credentialSubject", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
         public new ClrSubject CredentialSubject { get; set; }
 
-        [JsonProperty("partial", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("partial")]
+        // Currently this property is not validating properly and is getting left out of the proof 
+        // when the CLR 2.0 Validator is run.  This is a known issue and will be addressed in a future release.
+        //[JsonProperty("partial", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("partial")]
+        [System.Text.Json.Serialization.JsonIgnore(), Newtonsoft.Json.JsonIgnore]
         public bool Partial { get; set; }
     }
 }
