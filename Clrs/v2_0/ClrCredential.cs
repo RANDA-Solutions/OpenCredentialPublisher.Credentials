@@ -9,7 +9,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     {
         public ClrCredential()
         {
-            Context = new List<string> {
+            Context = new List<object> {
                 "https://www.w3.org/ns/credentials/v2",
                 "https://purl.imsglobal.org/spec/clr/v2p0/context-2.0.1.json",
                 "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json",

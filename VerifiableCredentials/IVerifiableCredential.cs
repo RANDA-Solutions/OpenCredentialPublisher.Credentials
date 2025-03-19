@@ -34,7 +34,7 @@ namespace OpenCredentialPublisher.Credentials.VerifiableCredentials
 
     public interface IVerifiableCredential2_0<T>
     {
-        List<string> Context { get; set; }
+        List<object> Context { get; set; }
         BasicProperties[] CredentialSchema { get; set; }
         BasicProperties CredentialStatus { get; set; }
         T CredentialSubject { get; set; }

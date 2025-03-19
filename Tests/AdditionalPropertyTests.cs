@@ -48,5 +48,17 @@ namespace Tests
             Assert.Contains("\"familyName\":\"Skywalker\"", serializedCredential);
             Assert.Contains("\"booleanProperty\":true", serializedCredential);
         }
+
+        [Fact]
+        public void TestClrCredential_LocalContext()
+        {
+            ClrCredential credential = new ClrCredential();
+            credential.Context.Add(JsonDocument.Parse("{ \"givenName\": \"https://schema.org/givenName\", \"familyName\": \"https://schema.org/familyName\", \"additionalName\": \"https://schema.org/additionalName\" }"));
+
+            string serializedCredential = JsonSerializer.Serialize(credential);
+            Assert.Contains("https://schema.org/additionalName", serializedCredential);
+            var backAgain = JsonSerializer.Deserialize<ClrCredential>(serializedCredential);
+            Assert.NotNull(backAgain);
+        }
     }
 }
