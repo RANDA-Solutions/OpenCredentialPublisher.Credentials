@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
-using OpenCredentialPublisher.Credentials.Converters.Newtonsoft;
-using System.ComponentModel;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
@@ -10,7 +9,7 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
     {
         public ClrCredential()
         {
-            Context = new[] {
+            Context = new List<object> {
                 "https://www.w3.org/ns/credentials/v2",
                 "https://purl.imsglobal.org/spec/clr/v2p0/context-2.0.1.json",
                 "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json",
@@ -30,7 +29,10 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
         [JsonProperty("credentialSubject", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("credentialSubject")]
         public new ClrSubject CredentialSubject { get; set; }
 
-        [JsonProperty("partial", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("partial")]
+        // Currently this property is not validating properly and is getting left out of the proof 
+        // when the CLR 2.0 Validator is run.  This is a known issue and will be addressed in a future release.
+        //[JsonProperty("partial", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("partial")]
+        [System.Text.Json.Serialization.JsonIgnore(), Newtonsoft.Json.JsonIgnore]
         public bool Partial { get; set; }
     }
 }

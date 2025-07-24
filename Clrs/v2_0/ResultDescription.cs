@@ -44,5 +44,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("valueMin", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("valueMin")]
         public string ValueMin { get; set; }
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        [JsonPropertyName("additionalProperties"), JsonProperty("additionalProperties", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, object> AdditionalProperties { get; set; }
     }
 }

@@ -23,5 +23,9 @@ namespace OpenCredentialPublisher.Credentials.Clrs.v2_0
 
         [JsonProperty("value", NullValueHandling = NullValueHandling.Ignore), JsonPropertyName("value")]
         public string Value { get; set; }
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        [JsonPropertyName("additionalProperties"), JsonProperty("additionalProperties", NullValueHandling = NullValueHandling.Ignore)]
+        public Dictionary<string, object> AdditionalProperties { get; set; }
     }
 }
